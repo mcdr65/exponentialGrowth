@@ -2,3 +2,4 @@ theme: jekyll-theme-minimal
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+baseurl: /exponentialGrowth
