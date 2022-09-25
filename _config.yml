@@ -1,5 +1,3 @@
-name: Andre Meichtry
-description: exponential Growth
 theme: jekyll-theme-minimal
 plugins:
  - jekyll-feed
