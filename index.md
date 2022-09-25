@@ -11,6 +11,7 @@ output:
 
 
 
+
 *The greatest shortcoming of the human race is the inability to
   understand the exponential function. (Al Bartlett)*
 
