@@ -1,5 +1,2 @@
-theme: jekyll-theme-minimal
-plugins:
- - jekyll-feed
- - jekyll-seo-tag
-baseurl: /exponentialGrowth
+theme: minimal
+math_engine: mathjax
