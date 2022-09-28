@@ -2,9 +2,10 @@
 title: "Exponential Growth COVID 19"
 author: "Andre Meichtry"
 date: "`r Sys.Date()`"
-output:
-  html_document:
-    number_sections: yes
+format:
+  html:
+    code-fold: true
+    number-sections: yes
 ---
 
 
