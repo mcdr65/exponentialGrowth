@@ -9,9 +9,8 @@ format:
 
 
 
-
 ```{r chunk_setup, include=FALSE, eval=TRUE}
-knitr::opts_chunk$set(echo =TRUE, out.width="50%",message=F, warning=F, comment=NA,
+knitr::opts_chunk$set(echo =TRUE, out.width="60%",message=F, warning=F, comment=NA,
                       eval=TRUE, cache.rebuild=F, cache=F, R.options=list(digits=5,show.signif.stars=FALSE),dev.args=list(bg = 'transparent'))
 ```
 
@@ -30,7 +29,7 @@ bringen, wenn das Stadion noch viel grösser wäre; wir haben
 
 
 
-```{r }
+```{r fig.cap="ExpWachstum"}
 max <- 3e06*20e06 ##Volumen Allianz-Arena
 halb <- max/2
 max2<-max*2
@@ -52,7 +51,7 @@ abline(v=t[448],lty=2,col="blue")
 **Jede Exponentialfunktion $a^x$ mit $a>1$ wächst ab einem gewissen
 $x$ schneller als jede lineare Funktion $a+bx$**.
 
-```{r }
+```{r fig.cap="Exp-Funktion"}
 curve(10*x,from=0,to=60,ylab="y")
 curve(20*x,add=TRUE,lty=2)
 curve(2^x,add=TRUE,lty=3)
@@ -110,11 +109,12 @@ with $t$: time, $\tau$: $e$-folding time, $T$: doubling time, $k$: growth consta
 
 
 
+
 # Covid-19
 
 ## Inzidenz und kumulierte Inzidenz
 
-```{r fig.show="hold",out.width="32%"} 
+```{r fig.cap=c("Inzidenz","kumulierte Indzidenz","log kumulierte Indzidenz")} 
 data<-read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv",check.names=FALSE)
 sw<-data[data$"Country/Region"=="Switzerland",-c(1,2,3,4)]
 cases<-as.numeric(sw[-c(1:42)])
@@ -131,10 +131,12 @@ plot(1:length(cases),log(cases),type="l",col="blue",lwd=2,xlab="Tage")
 
 
 
+
 ## Erste Welle Covid-19
 
 
-```{r fig.show="hold"} 
+
+```{r fig.cap=c("Inzidenz","log Inzidenz")} 
 swisspop<-8e6
 time<-seq(1,60,by=1)
 tag<-1:length(cases)
@@ -194,7 +196,7 @@ $0.01\times 2^{0.33t}=0.01\times (2^{0.33})^t=0.01\times
 1.3^t=1.3^{\log_{1.3}0.01}1.3^t=1.3^{t+\log_{1.3}0.01}=1.3^{t-17.552}$
 
 
-```{r }
+```{r fig.cap="Auswirkung Vorfaktor"}
 delay<-log(0.1)/log(1.3)
 delay
 delay2<-log(0.01)/log(1.3)
