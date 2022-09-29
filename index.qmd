@@ -2,10 +2,14 @@
 title: "Exponential Growth COVID 19"
 author: "Andre Meichtry"
 date: "`r Sys.Date()`"
+fig-cap-location: top
 format:
   html:
     code-fold: true
 ---
+
+
+
 
 
 
@@ -29,7 +33,7 @@ bringen, wenn das Stadion noch viel grösser wäre; wir haben
 
 
 
-```{r fig.cap="ExpWachstum"}
+```{r fig.cap="Exponentielles Wachstum"}
 max <- 3e06*20e06 ##Volumen Allianz-Arena
 halb <- max/2
 max2<-max*2
@@ -51,7 +55,7 @@ abline(v=t[448],lty=2,col="blue")
 **Jede Exponentialfunktion $a^x$ mit $a>1$ wächst ab einem gewissen
 $x$ schneller als jede lineare Funktion $a+bx$**.
 
-```{r fig.cap="Exp-Funktion"}
+```{r fig.cap="Exponentialfunktion und lineare Funktion"}
 curve(10*x,from=0,to=60,ylab="y")
 curve(20*x,add=TRUE,lty=2)
 curve(2^x,add=TRUE,lty=3)
