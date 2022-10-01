@@ -10,9 +10,6 @@ format:
 
 
 
-
-
-
 ```{r chunk_setup, include=FALSE, eval=TRUE}
 knitr::opts_chunk$set(echo =TRUE, out.width="60%",message=F, warning=F, comment=NA,
                       eval=TRUE, cache.rebuild=F, cache=F, R.options=list(digits=5,show.signif.stars=FALSE),dev.args=list(bg = 'transparent'))
@@ -113,12 +110,13 @@ with $t$: time, $\tau$: $e$-folding time, $T$: doubling time, $k$: growth consta
 
 
 
-
 # Covid-19
 
 ## Inzidenz und kumulierte Inzidenz
 
 ```{r fig.cap=c("Inzidenz","kumulierte Indzidenz","log kumulierte Indzidenz")} 
+#| column: screen-inset-shaded
+#| layout-nrow: 1 
 data<-read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv",check.names=FALSE)
 sw<-data[data$"Country/Region"=="Switzerland",-c(1,2,3,4)]
 cases<-as.numeric(sw[-c(1:42)])
@@ -141,6 +139,8 @@ plot(1:length(cases),log(cases),type="l",col="blue",lwd=2,xlab="Tage")
 
 
 ```{r fig.cap=c("Inzidenz","log Inzidenz")} 
+#| column: screen-inset-shaded
+#| layout-nrow: 1 
 swisspop<-8e6
 time<-seq(1,60,by=1)
 tag<-1:length(cases)
@@ -182,6 +182,7 @@ points(tag,cases,type="l",col="red")
 
 
 ## Auswirkung Vorfaktor
+
 
 
 Annahme: Verdoppelung alle drei Tage, 10 Prozent der Infizierten müssen ins Spital. Die Anzahl Cases von heute sind die
